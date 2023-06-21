@@ -1,0 +1,44 @@
+.employees-container {
+    min-height: 30vh;
+    h1 {
+        text-align: center;
+        text-transform: capitalize;
+    }
+    .employees-table {
+        width: 90%;
+        margin: 10px auto;
+        border-collapse: collapse;
+        thead {
+        border-bottom: 1px solid black;
+        background-color: #000;
+        th {
+            text-align: left;
+            text-transform: capitalize;
+            min-width: 15%;
+            color: #fff;
+            padding: 1%;
+           }
+        }
+        tbody {
+            text-align: left;
+            td{
+                padding: 10px;
+                a {
+                    text-decoration: none;
+                    text-transform: capitalize;
+                    color: #1f1f1f;
+                }
+                a:hover {
+                    text-decoration: underline;
+                }
+
+                a:visited {
+                    color: #1f1f1f;
+                }
+            }
+        }
+    }
+    p {
+        text-align: center;
+    }
+}

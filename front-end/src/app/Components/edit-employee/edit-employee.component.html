@@ -1,0 +1,51 @@
+<div class="add-employee-container">
+    <h1>update employee</h1>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" >
+        <div class="form-field">
+            <label for="id">id</label>
+            <input class="readonly" formControlName="id" type="text" id="id" name="id" readonly>
+        </div>
+        <div class="form-field">
+            <label for="name">full name</label>
+            <input formControlName="name" placeholder="Full Name" type="text" id="name" name="name">
+            <div *ngIf="name.touched && name.invalid" class='error'>
+                <p *ngIf="name.errors?.required" > <i class="fa-sharp fa-solid fa-circle-exclamation fa-spin-pulse"></i> This field is required</p>
+                <p *ngIf="name.errors?.minlength"> <i class="fa-sharp fa-solid fa-circle-exclamation fa-spin-pulse"></i> Name should be at least 6 charachters </p>
+            </div>
+        </div>
+        <div class="form-field">
+            <label for="email">email</label>
+            <input formControlName="email" placeholder="Email" type="email" id="email" name="email">
+            <div *ngIf="email.touched && email.invalid" class='error'>
+                <p *ngIf="email.errors?.required" > <i class="fa-sharp fa-solid fa-circle-exclamation fa-spin-pulse"></i> This field is required</p>
+                <p *ngIf="email.errors?.email"> <i class="fa-sharp fa-solid fa-circle-exclamation fa-spin-pulse"></i> email is invalid</p>
+            </div>
+        </div>
+        <div class="form-field">
+            <label for="phone">phone</label>
+            <input formControlName="phone" placeholder="phone number" type="text" id="phone" name="phone">
+            <div *ngIf="phone.touched && phone.invalid" class='error'>
+                <p *ngIf="phone.errors?.required" > <i class="fa-sharp fa-solid fa-circle-exclamation fa-spin-pulse"></i> This field is required</p>
+                <p *ngIf="phone.errors?.pattern"> <i class="fa-sharp fa-solid fa-circle-exclamation fa-spin-pulse"></i> phone is invalid</p>
+            </div>
+        </div>
+        <div class="form-field">
+            <label for="salart">salary</label>
+            <input formControlName="salary" placeholder="Salary" type="number" id="salary" name="salary">
+            <div *ngIf="salary.touched && salary.invalid" class='error'>
+                <p *ngIf="salary.errors?.required" > <i class="fa-sharp fa-solid fa-circle-exclamation fa-spin-pulse"></i> This field is required</p>
+            </div>
+        </div>
+        <div class="form-field">
+            <label for="department">department</label>
+            <input formControlName="department" placeholder="department" type="text" id="department" name="department">
+            <div *ngIf="department.touched && department.invalid" class='error'>
+                <p *ngIf="department.errors?.required" > <i class="fa-sharp fa-solid fa-circle-exclamation fa-spin-pulse"></i> This field is required</p>
+            </div>
+        </div>
+        <div class="submit">
+            <button type="submit" [disabled]="form.invalid">update</button>
+            <button type="button" (click)="deletePerson()" class="delete-btn">delete</button>
+        </div>
+    </form>
+</div>

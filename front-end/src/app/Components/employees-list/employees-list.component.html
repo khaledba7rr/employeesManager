@@ -1,0 +1,30 @@
+<div class="employees-container">
+
+    <h1>employees</h1>
+
+    <table *ngIf="employees.length > 0" class="employees-table">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>email</th>
+                <th>phone</th>
+                <th class="department">department</th>
+                <th>salary</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employee of employees">
+                <td>{{employee.id}}</td>
+                <td>{{employee.name}}</td>
+                <td>{{employee.email}}</td>
+                <td>{{employee.phone}}</td>
+                <td>{{employee.department}}</td>
+                <td>{{employee.salary}}</td>
+                <td><a [routerLink]="['/employees', 'edit', employee.id]">view</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <P *ngIf="employees.length == 0">There are no employees...</P>
+</div>

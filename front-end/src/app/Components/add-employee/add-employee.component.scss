@@ -1,0 +1,71 @@
+.add-employee-container {
+    width: 90%;
+    margin: 10px auto;
+    form, h1 {
+        text-align: center;
+        text-transform: capitalize;
+    }
+
+    form{
+        .form-field {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .error {
+                width: 50%;
+                align-self: center;
+                p {
+                    color: red;
+                    font-size: 0.8rem;
+                    text-align: left;
+                }
+            }
+            label{
+                width: 50%;
+                margin: 5px;
+                margin-bottom: 0;
+                align-self: flex-start;
+            }
+            input {
+                box-sizing: content-box;
+                width: 50%;
+                padding: 10px;
+                margin: 10px;
+                margin-bottom: 0;
+                border: 1px solid rgba($color: #1f1f1f, $alpha: 0.5);
+            }
+            .readonly {
+                background-color: grey;
+                border:none;
+            }
+
+            .readonly:focus {
+                outline: none;
+                border: none;
+            }
+        }
+        .submit {
+            padding: 10px;
+            margin: 10px;
+            button {
+                padding: 10px;
+                outline: none;
+                cursor: pointer;
+                border: none;
+                background-color: #1f1f1f;
+                color: white;
+                text-transform: capitalize;
+                font-weight: 900;
+                margin-right: 10px;
+            }
+            .delete-btn {
+                background-color: rgba($color: #ff0000, $alpha: 0.7);
+            }
+            button:disabled{
+                cursor: not-allowed;
+                background-color: grey;
+                font-weight: 100;
+            }
+        }
+    }
+}
